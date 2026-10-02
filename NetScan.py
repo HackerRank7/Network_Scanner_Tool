@@ -242,7 +242,7 @@ def run_scan(target, ports, do_vuln=True, threads=100):
         sys.exit(1)
 
     print("=" * 60)
-    print(f"      Target            : {target} ({target_ip})")
+    print(f"      [Target            : {target} ({target_ip})]")
     print("  --> Only scan systems you own or are authorized to test <--")
     print("=" * 60)
 
