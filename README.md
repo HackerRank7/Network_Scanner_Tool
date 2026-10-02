@@ -31,6 +31,29 @@ That's it — this tool doesn't need any paid software or API keys.
 
 ---
 
+## 🔧 Installing Git (Optional but Recommended)
+
+Git lets you download (`clone`) this repository with a single command, and makes it easy to get future updates. If you'd rather not install anything extra, skip this section and just use the **"Download ZIP"** method shown in the setup steps below.
+
+### Windows
+
+1. Go to [git-scm.com/download/win](https://git-scm.com/download/win) — the download will start automatically.
+2. Run the installer and click **Next** through all the steps, keeping the default options (no need to change any settings).
+3. Click **Install**, then **Finish**.
+4. **Important:** Close any open Command Prompt / PowerShell window and open a new one — this is required for Windows to recognize the new `git` command.
+5. Verify the installation:
+```powershell
+   git --version
+```
+   You should see something like `git version 2.45.0.windows.1`.
+
+### Don't want to install Git?
+
+No problem — you can download this project as a ZIP file instead:
+1. Click the green **Code** button at the top of this repository page.
+2. Click **Download ZIP**.
+3. Extract the ZIP file anywhere on your computer and continue with the setup steps below.
+   
 ## 🪟 How to Set Up and Use on Windows
 
 ### Step 1 — Install Python
@@ -54,8 +77,9 @@ If it prints something like `Python 3.12.0`, you're good. If you get an error li
 
 **Option A — Using Git (recommended):**
 ```powershell
-git clone https://github.com/YOUR-USERNAME/network-recon-tool.git
-cd network-recon-tool
+git clone https://github.com/HackerRank7/Network_Scanner_Tool.git
+cd Network_Scanner_Tool
+python NetScan.py
 ```
 
 **Option B — Without Git:**
@@ -63,7 +87,7 @@ cd network-recon-tool
 2. Extract the ZIP file anywhere (e.g. your Desktop)
 3. Open PowerShell and navigate into that folder:
    ```powershell
-   cd "C:\Users\YourName\Desktop\network-recon-tool"
+   cd C:\Users\pc\Downloads\Network_Scanner_Tool-main\Network_Scanner_Tool-main
    ```
 
 ### Step 4 — (Optional) Install colorama for colored output
@@ -77,7 +101,7 @@ pip install colorama
 ### Step 5 — Run the tool
 
 ```powershell
-python network_scanner.py
+python NetScan.py
 ```
 
 The tool will now ask you questions one by one:
@@ -137,15 +161,16 @@ sudo pacman -S python python-pip
 
 **Option A — Using Git (recommended):**
 ```bash
-git clone https://github.com/YOUR-USERNAME/network-recon-tool.git
-cd network-recon-tool
+git clone https://github.com/HackerRank7/Network_Scanner_Tool.git
+cd Network_Scanner_Tool
+Python3 NetScan.py
 ```
 
 **Option B — Without Git:**
 Download the ZIP from GitHub, then:
 ```bash
-unzip network-recon-tool-main.zip
-cd network-recon-tool-main
+upzip Network_Scanner_Tool-main.zip
+cd Network_Scanner_Tool-main
 ```
 
 ### Step 3 — Make sure `ping` is available (needed for OS detection)
@@ -158,7 +183,7 @@ sudo apt install iputils-ping -y
 ### Step 4 — Run the tool
 
 ```bash
-python3 network_scanner.py
+python3 NetScan.py
 ```
 
 Just like on Windows, it will ask you the same questions interactively — enter your target, choose a port option, decide on vulnerability checking, and press Enter for the default thread count.
@@ -179,7 +204,7 @@ Just like on Windows, it will ask you the same questions interactively — enter
 If you don't want the step-by-step questions (for example, if you're scripting or automating scans), you can pass everything as command-line flags instead:
 
 ```bash
-python3 network_scanner.py -t <target> -p <ports> [options]
+python3 NetScan.py -t <target> -p <ports> [options]
 ```
 
 | Flag | Meaning | Example |
@@ -192,16 +217,16 @@ python3 network_scanner.py -t <target> -p <ports> [options]
 **Examples:**
 ```bash
 # Scan common ports with vulnerability lookup
-python3 network_scanner.py -t scanme.nmap.org -p common
+python3 NetScan.py -t scanme.nmap.org -p common
 
 # Scan a specific port range, skip vulnerability lookup
-python3 network_scanner.py -t 192.168.1.10 -p 1-1000 --no-vuln
+python3 NetScan.py -t 192.168.1.10 -p 1-1000 --no-vuln
 
 # Scan a custom list of ports with more threads
-python3 network_scanner.py -t 192.168.1.10 -p 22,80,443,3306 --threads 200
+python3 NetScan.py -t 192.168.1.10 -p 22,80,443,3306 --threads 200
 
 # Scan every possible port (slow!)
-python3 network_scanner.py -t 192.168.1.10 -p all
+python3 NetScan.py -t 192.168.1.10 -p all
 ```
 
 If you run the tool with **no flags at all**, it automatically switches to the beginner-friendly interactive mode described above.
