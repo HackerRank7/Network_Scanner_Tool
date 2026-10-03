@@ -163,13 +163,13 @@ sudo pacman -S python python-pip
 ```bash
 git clone https://github.com/HackerRank7/Network_Scanner_Tool.git
 cd Network_Scanner_Tool
-Python3 NetScan.py
+python3 NetScan.py
 ```
 
 **Option B — Without Git:**
 Download the ZIP from GitHub, then:
 ```bash
-upzip Network_Scanner_Tool-main.zip
+unzip Network_Scanner_Tool-main.zip
 cd Network_Scanner_Tool-main
 ```
 
